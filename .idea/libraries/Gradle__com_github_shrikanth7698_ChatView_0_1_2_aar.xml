@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.shrikanth7698:ChatView:0.1.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/1ccd6bc8cea493b02403494e04ca277a/transformed/jetified-ChatView-0.1.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1ccd6bc8cea493b02403494e04ca277a/transformed/jetified-ChatView-0.1.2/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1ccd6bc8cea493b02403494e04ca277a/transformed/jetified-ChatView-0.1.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.shrikanth7698/ChatView/0.1.2/cd68fa4bf991e5dedc1eb14b43824de249d179d4/ChatView-0.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

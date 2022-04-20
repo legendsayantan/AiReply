@@ -1,0 +1,22 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="code.*" />
+          <option value="nltk" />
+          <option value="time" />
+          <option value="threading" />
+          <option value="ctypes" />
+          <option value="inspect" />
+          <option value="src.python.interpreter.type" />
+          <option value="src.python.interpreter.*" />
+          <option value="src.main.python.interpreter.*" />
+          <option value="sendtext.*" />
+          <option value="os" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

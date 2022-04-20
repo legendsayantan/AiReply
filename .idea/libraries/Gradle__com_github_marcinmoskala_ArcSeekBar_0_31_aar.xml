@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.marcinmoskala:ArcSeekBar:0.31@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/21ea6d98ee84f56edae12f048db27e2c/transformed/jetified-ArcSeekBar-0.31/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/21ea6d98ee84f56edae12f048db27e2c/transformed/jetified-ArcSeekBar-0.31/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/21ea6d98ee84f56edae12f048db27e2c/transformed/jetified-ArcSeekBar-0.31/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

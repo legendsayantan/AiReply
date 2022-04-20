@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Gradle: com.zhihu.android:matisse:0.4.3@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/6c9a14a1dc9374e0cfe9511c6aba2cd9/transformed/jetified-matisse-0.4.3/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/6c9a14a1dc9374e0cfe9511c6aba2cd9/transformed/jetified-matisse-0.4.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6c9a14a1dc9374e0cfe9511c6aba2cd9/transformed/jetified-matisse-0.4.3/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6c9a14a1dc9374e0cfe9511c6aba2cd9/transformed/jetified-matisse-0.4.3/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zhihu.android/matisse/0.4.3/15ba11875467fe817e89e784afdecef56ec5f21c/matisse-0.4.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zhihu.android/matisse/0.4.3/904cfb8603c398d6cece784e71ad7c25bc1ac262/matisse-0.4.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
