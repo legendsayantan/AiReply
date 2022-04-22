@@ -1,10 +1,16 @@
 *This project is still in early development stage.*
 
 # AiReply
-#### Aimed to execute machine-learning based conversational models on Android device, fully offline and with the fully-functional ability to also be trained in the same Android device.
+
+#### An Android application to execute machine-learning based conversational models on Android device and with the ability to also be trained in Android device, all completely offline.
 #### Based on [ChatterBot](https://github.com/gunthercox/ChatterBot) engine using Python, built with [Chaquopy](https://chaquo.com).
 
+## Destination
+
+This project is being developed to create an Android app that can reply to text messages, or assist with any queries in text messages whenever the user is absent to do so.
+
 ## Contribute
+
 Any contributions are welcome, as long as the quality of the project and also improvements are maintained.
 Contribute by creating a Pull Request.
 
