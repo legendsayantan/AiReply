@@ -2,7 +2,7 @@
 
 # AiReply
 
-#### An Android application to execute machine-learning based conversational models on Android device and with the ability to also be trained in Android device, all completely offline.
+#### An Android application to run machine-learning based conversational models on Android device and with the ability to also be trained in Android device, all completely offline.
 #### Based on [ChatterBot](https://github.com/gunthercox/ChatterBot) engine using Python, built with [Chaquopy](https://chaquo.com).
 
 ## Destination
