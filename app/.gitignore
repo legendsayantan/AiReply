@@ -1,6 +1,7 @@
 .gradle
 /local.properties
 /.idea/libraries
+/.idea/vcs.xml
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/assetWizardSettings.xml
