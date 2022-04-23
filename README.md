@@ -5,7 +5,7 @@
 #### An Android application to run machine-learning based conversational models on Android device and with the ability to also be trained in Android device, all completely offline.
 #### Based on [ChatterBot](https://github.com/gunthercox/ChatterBot) engine using Python, built with [Chaquopy](https://chaquo.com).
 
-## Destination
+## Goal
 
 This project is being developed to create an Android app that can reply to text messages, or assist with any queries in text messages whenever the user is absent to do so.
 
