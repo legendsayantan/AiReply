@@ -32,9 +32,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class PythonService extends Service {
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
-    String lastApp;
     public static boolean status = false;
     static Python py;
     static PyObject console;
@@ -79,11 +76,6 @@ if(false){
         console.callAttrThrows("mainTextCode",
                 code.replace("dblocation",db.getAbsolutePath()));
     }catch (PyException e){
-        // If there's an error, you can obtain its output as well
-        // e.g. if you mispell the code
-        // Missing parentheses in call to 'print'
-        // Did you mean print("text")?
-        // <string>, line 1
     } catch (Throwable throwable) {
         throwable.printStackTrace();
     }
@@ -108,11 +100,6 @@ if(false){
                 MainActivity.c.setVisibility(View.GONE);
             }catch (Exception ignored){}
         }catch (PyException e){
-            // If there's an error, you can obtain its output as well
-            // e.g. if you mispell the code
-            // Missing parentheses in call to 'print'
-            // Did you mean print("text")?
-            // <string>, line 1
             interpreterOutput = e.getMessage().toString();
         } catch (Throwable throwable) {
             throwable.printStackTrace();
