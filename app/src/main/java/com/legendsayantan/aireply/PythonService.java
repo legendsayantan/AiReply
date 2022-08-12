@@ -24,6 +24,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.StreamTokenizer;
 
 public class PythonService extends Service {
     public static boolean status = false;
@@ -33,7 +34,10 @@ public class PythonService extends Service {
     static PyObject textOutputStream;
     static String code,code2,code3;
     static Context context;
-
+    static PyObject init;
+    static PyObject sys;
+    static PyObject io;
+    static PyObject obj;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -51,29 +55,19 @@ public class PythonService extends Service {
         context = getApplicationContext();
         if(!Python.isStarted()){
             Python.start(new AndroidPlatform(getApplicationContext()));
+            System.out.println("Starting python");
         }
         py = Python.getInstance();
-        code = readAsset("code.py");
-
-        code2 = readAsset("sendtext.py");
         db = new File(getFilesDir(),"db.sqlite3");
         System.out.println("dbpath "+db.getAbsolutePath());
-        PyObject sys = py.getModule("sys");
-        PyObject io = py.getModule("io");
-        console = py.getModule("interpreter");
 
+        sys = py.getModule("sys");
+        io = py.getModule("io");
+        init = py.getModule("_init_");
         textOutputStream = io.callAttr("StringIO");
         sys.put("stdout", textOutputStream);
-
-if(false){
-    try {
-        console.callAttrThrows("mainTextCode",
-                code.replace("dblocation",db.getAbsolutePath()));
-    }catch (PyException e){
-    } catch (Throwable throwable) {
-        throwable.printStackTrace();
-    }
-}
+        init.callAttr("start",db.getAbsolutePath());
+        obj = init.get("chatbot");
         status = true;
         System.out.println("initiated.");
         try {
@@ -82,25 +76,15 @@ if(false){
     }
 
     public static String getResponse(String string){
-        String interpreterOutput = "";
+        String out = "";
         try {
-            console.callAttrThrows("mainTextCode",
-                    code
-                    .replace("dblocation",db.getAbsolutePath())
-                    .replace("message",string));
-
-            interpreterOutput = textOutputStream.callAttr("getvalue").toString();
-            try {
-                MainActivity.c.setVisibility(View.GONE);
-            }catch (Exception ignored){}
-        }catch (PyException e){
-            interpreterOutput = e.getMessage().toString();
+            out = obj.callAttrThrows("get_response",string).toString();
         } catch (Throwable throwable) {
+            System.err.println("ERROR\n"+throwable.getMessage());
             throwable.printStackTrace();
         }
-        return interpreterOutput;
+        return out;
     }
-
 
     @RequiresApi(Build.VERSION_CODES.O)
     private void startMyOwnForeground() {
