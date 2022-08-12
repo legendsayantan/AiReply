@@ -6,13 +6,9 @@ import android.app.NotificationManager;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.os.AsyncTask;
 import android.os.Build;
-import android.os.Handler;
 import android.os.IBinder;
-import android.os.Looper;
 import android.view.View;
 import android.widget.Toast;
 
@@ -28,8 +24,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class PythonService extends Service {
     public static boolean status = false;
@@ -152,9 +146,7 @@ if(false){
             if (reader != null) {
                 try {
                     reader.close();
-                } catch (IOException e) {
-                    //log the exception
-                }
+                } catch (IOException ignored) { }
             }
         }
         return data;

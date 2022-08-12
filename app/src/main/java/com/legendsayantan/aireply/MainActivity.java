@@ -114,8 +114,6 @@ public class MainActivity extends AppCompatActivity {
         ComponentName componentName = new ComponentName(context,
                 JobService.class);
         JobInfo jobInfo = new JobInfo.Builder(1, componentName)
-                // setOverrideDeadline runs it immediately - you must have at least one constraint
-                // https://stackoverflow.com/questions/51064731/firing-jobservice-without-constraints
                 .setOverrideDeadline(0)
                 .setPersisted(true).build();
         jobScheduler.schedule(jobInfo);
@@ -138,12 +136,7 @@ public class MainActivity extends AppCompatActivity {
             ImageView imageView1 = findViewById(R.id.imageView);
             ImageView imageView2 = findViewById(R.id.imageView2);
             ImageView imageView3 = findViewById(R.id.imageView3);
-            imageView3.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    startActivity(new Intent(getApplicationContext(),ChatActivity.class));
-                }
-            });
+            imageView3.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(),ChatActivity.class)));
             ColourTheme.initContainer(findViewById(R.id.container));
             ColourTheme.initTextView(textView);
             ColourTheme.initTextView(textView2);
@@ -174,8 +167,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
     }
     public static boolean databasePresent(){
-        File folder = activity.getFilesDir();
-        File dbFile = new File(folder,"db.sqlite3");
-        return dbFile.exists();
+        return new File(activity.getFilesDir(),"db.sqlite3").exists();
     }
 }

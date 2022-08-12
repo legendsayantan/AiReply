@@ -6,13 +6,11 @@ import android.app.WallpaperManager;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.graphics.ColorUtils;
@@ -38,7 +36,7 @@ public class ColourTheme {
                 drawable1 = wallpaperManager.getDrawable();
             }
         }else{
-            System.out.println("Error due to no permission");
+            System.out.println("Theme error due to no permission");
         }
         drawable = drawable1;
         Bitmap iconBitmap = ((BitmapDrawable) drawable).getBitmap();
@@ -61,14 +59,16 @@ public class ColourTheme {
         if(getDistance(dominantColor,iconPalette.getVibrantColor(0x000000))<=10.0){
             dominantColor = ColorUtils.blendARGB(darkColor,activity.getResources().getColor(R.color.softblack),0.5F);
         }
-        int nightModeFlags =
+        int uiFlags =
                 activity.getResources().getConfiguration().uiMode &
                         Configuration.UI_MODE_NIGHT_MASK;
-        nightUi = nightModeFlags == Configuration.UI_MODE_NIGHT_YES;
+        nightUi = uiFlags == Configuration.UI_MODE_NIGHT_YES;
         vibrantColor = iconPalette.getVibrantColor(
                 ColorUtils.blendARGB(
                         vibrantColor,
-                        nightUi?iconPalette.getVibrantColor(activity.getResources().getColor(R.color.softblack)):iconPalette.getVibrantColor(activity.getResources().getColor(R.color.softwhite)),
+                        nightUi?
+                                iconPalette.getVibrantColor(activity.getResources().getColor(R.color.softblack)):
+                                iconPalette.getVibrantColor(activity.getResources().getColor(R.color.softwhite)),
                         0.5F));
     }
 
