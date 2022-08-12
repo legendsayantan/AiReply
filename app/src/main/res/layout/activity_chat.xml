@@ -11,9 +11,9 @@
   <TextView
       android:id="@+id/top"
       android:layout_width="match_parent"
-      android:layout_height="100dp"
+      android:layout_height="80dp"
       android:text="\n   Chat"
-      android:textSize="40dp"
+      android:textSize="32dp"
       android:textStyle="bold"
       app:layout_constraintBottom_toTopOf="@+id/chatView"
       app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,6 @@
       app:rightBubbleLayoutColor="@color/neublue"
       app:leftBubbleTextColor="@android:color/white"
       app:rightBubbleTextColor="@android:color/black"
-      android:layout_above="@+id/container"
       app:showSenderName="false"
       android:id="@+id/chatView">
 

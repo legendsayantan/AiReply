@@ -1,15 +1,14 @@
 package com.legendsayantan.aireply;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.WindowManager;
-import android.widget.ActionMenuView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.shrikanthravi.chatview.data.Message;
 import com.shrikanthravi.chatview.widget.ChatView;
@@ -45,6 +44,11 @@ public class ChatActivity extends AppCompatActivity {
                 startInit();
             }
         });
+        View icon = chatView.findViewById(R.id.expandIconView);
+        RecyclerView rv = chatView.findViewById(R.id.chatRV);
+        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+        int y = displayMetrics.heightPixels-500;
+        icon.setOnClickListener(view -> rv.smoothScrollBy(0,-y));
     }
 
     @Override
@@ -66,20 +70,16 @@ public class ChatActivity extends AppCompatActivity {
             protected Void doInBackground(Void... voids) {
                 try {
                     String reply = PythonService.getResponse(text);
-                    String msg = reply;
-                    reply = reply.replace(pastmsg,"")
-                    .replace("List Trainer: [####################] 100%","")
+                    reply = reply
                     .replace("$$id$$","LegendSayantan")
                     .replace("$$name$$","Sayantan_Bot")
                     .replace("$$user$$","user");
-                    pastmsg = msg;
                     reply = reply.replace("\n"," ");
                     Message response = new Message();
                     response.setBody(reply);
                     response.setType(Message.LeftSimpleMessage);
                     response.setTime("Bot - "+new SimpleDateFormat("HH:mm dd MMM").format(new Date(System.currentTimeMillis())));
                     System.out.println("Reply "+reply);
-
                     activity.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
